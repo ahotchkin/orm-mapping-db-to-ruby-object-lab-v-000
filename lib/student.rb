@@ -70,9 +70,7 @@ class Student
     SQL
 
     DB[:conn].execute(sql).map do |row|
-      if row.id <= x
-        self.new_from_db(row)
-      end
+      while row[0] <= x self.new_from_db(row)
     end
   end
 
