@@ -71,7 +71,7 @@ class Student
 
     DB[:conn].execute(sql).map do |row|
       if row.id <= x
-        self.new_from_db
+        self.new_from_db(row)
       end
     end
   end
